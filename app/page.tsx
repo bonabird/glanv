@@ -1,4 +1,4 @@
-import { Search } from './search';
+import { Search } from '../components/ui/search';
 
 export default async function IndexPage({
   searchParams

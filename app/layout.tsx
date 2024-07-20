@@ -21,22 +21,22 @@
 //   );
 // }
 
-import './globals.css';
+import "./globals.css";
 
-import Link from 'next/link';
-import { Logo, SettingsIcon, UsersIcon, VercelLogo } from '@/components/icons';
-import { NavItem } from './nav-item';
-import { DrawerLinks } from '@/components/layout/Drawer/DrawerContent';
-import invoiceNavItems from './nav-items/invoice';
+import Link from "next/link";
+import { Logo } from "@/components/icons";
+import { DrawerLinks } from "@/components/layout/Drawer/DrawerContent";
+import invoiceNavItems from "../nav-items/invoice";
+import { MobileHeader } from "@/components/layout/Mobile/MobileHeader";
 
 export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
+  title: "Glaucidae",
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, and Prettier.'
+    "Automatic invoicing system for freelancers and small businesses.",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -52,26 +52,18 @@ export default function RootLayout({
                   href="/"
                 >
                   <Logo />
-                  <span className="">ACME</span>
+                  <span className="">Glaucidae</span>
                 </Link>
               </div>
               <div className="flex-1 overflow-auto py-2">
                 <nav className="grid items-start px-4 text-sm font-medium">
-                <DrawerLinks NavigationItems={invoiceNavItems} />
+                  <DrawerLinks NavigationItems={invoiceNavItems} />
                 </nav>
               </div>
             </div>
           </div>
           <div className="flex flex-col">
-            <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40 justify-between lg:justify-end">
-              <Link
-                className="flex items-center gap-2 font-semibold lg:hidden"
-                href="/"
-              >
-                <Logo />
-                <span className="">ACME</span>
-              </Link>
-            </header>
+            <MobileHeader />
             {children}
           </div>
         </div>

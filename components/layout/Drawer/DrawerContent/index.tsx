@@ -1,5 +1,5 @@
-import { NavItem } from "@/app/nav-item";
-import { NavObj, Item } from "@/app/nav-items/invoice";
+import { NavItem } from "@/components/layout/Drawer/DrawerContent/nav-item";
+import { NavObj, Item } from "@/nav-items/invoice";
 
 export function DrawerLinks({ NavigationItems }: { NavigationItems: NavObj }) {
   return (
